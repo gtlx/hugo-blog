@@ -2,40 +2,40 @@
 <urlset xmlns="http://www.sitemaps.org/schemas/sitemap/0.9"
   xmlns:xhtml="http://www.w3.org/1999/xhtml">
   <url>
-    <loc>https://gtlx.github.io/hugo-blog/en/categories/</loc>
+    <loc>https://blog.gtlx.ltd/en/categories/</loc>
     <xhtml:link
                 rel="alternate"
                 hreflang="zh-cn"
-                href="https://gtlx.github.io/hugo-blog/categories/"
+                href="https://blog.gtlx.ltd/categories/"
                 />
     <xhtml:link
                 rel="alternate"
                 hreflang="en"
-                href="https://gtlx.github.io/hugo-blog/en/categories/"
+                href="https://blog.gtlx.ltd/en/categories/"
                 />
   </url><url>
-    <loc>https://gtlx.github.io/hugo-blog/en/</loc>
+    <loc>https://blog.gtlx.ltd/en/</loc>
     <xhtml:link
                 rel="alternate"
                 hreflang="zh-cn"
-                href="https://gtlx.github.io/hugo-blog/"
+                href="https://blog.gtlx.ltd/"
                 />
     <xhtml:link
                 rel="alternate"
                 hreflang="en"
-                href="https://gtlx.github.io/hugo-blog/en/"
+                href="https://blog.gtlx.ltd/en/"
                 />
   </url><url>
-    <loc>https://gtlx.github.io/hugo-blog/en/tags/</loc>
+    <loc>https://blog.gtlx.ltd/en/tags/</loc>
     <xhtml:link
                 rel="alternate"
                 hreflang="zh-cn"
-                href="https://gtlx.github.io/hugo-blog/tags/"
+                href="https://blog.gtlx.ltd/tags/"
                 />
     <xhtml:link
                 rel="alternate"
                 hreflang="en"
-                href="https://gtlx.github.io/hugo-blog/en/tags/"
+                href="https://blog.gtlx.ltd/en/tags/"
                 />
   </url>
 </urlset>

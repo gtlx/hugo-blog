@@ -2,24 +2,24 @@
 <rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom">
     <channel>
         <title>Tags on 演示站点</title>
-        <link>https://gtlx.github.io/hugo-blog/tags/</link>
+        <link>https://blog.gtlx.ltd/tags/</link>
         <description>Recent content in Tags on 演示站点</description>
         <generator>Hugo -- gohugo.io</generator>
         <language>zh-cn</language>
-        <copyright>Example Person</copyright><atom:link href="https://gtlx.github.io/hugo-blog/tags/index.xml" rel="self" type="application/rss+xml" /><item>
+        <copyright>Example Person</copyright><atom:link href="https://blog.gtlx.ltd/tags/index.xml" rel="self" type="application/rss+xml" /><item>
         <title>Linux</title>
-        <link>https://gtlx.github.io/hugo-blog/tags/linux/</link>
+        <link>https://blog.gtlx.ltd/tags/linux/</link>
         <pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate>
         
-        <guid>https://gtlx.github.io/hugo-blog/tags/linux/</guid>
+        <guid>https://blog.gtlx.ltd/tags/linux/</guid>
         <description></description>
         </item>
         <item>
         <title>折腾</title>
-        <link>https://gtlx.github.io/hugo-blog/tags/%E6%8A%98%E8%85%BE/</link>
+        <link>https://blog.gtlx.ltd/tags/%E6%8A%98%E8%85%BE/</link>
         <pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate>
         
-        <guid>https://gtlx.github.io/hugo-blog/tags/%E6%8A%98%E8%85%BE/</guid>
+        <guid>https://blog.gtlx.ltd/tags/%E6%8A%98%E8%85%BE/</guid>
         <description></description>
         </item>
         
