@@ -35,6 +35,8 @@
   </url><url>
     <loc>https://gtlx.github.io/hugo-blog/links/</loc>
   </url><url>
+    <loc>https://gtlx.github.io/hugo-blog/tags/linux/</loc>
+  </url><url>
     <loc>https://gtlx.github.io/hugo-blog/post/</loc>
   </url><url>
     <loc>https://gtlx.github.io/hugo-blog/search/</loc>
@@ -53,10 +55,14 @@
   </url><url>
     <loc>https://gtlx.github.io/hugo-blog/categories/test/</loc>
   </url><url>
+    <loc>https://gtlx.github.io/hugo-blog/p/%E5%AE%89%E5%8D%93%E5%88%B7%E6%9C%BA/</loc>
+  </url><url>
     <loc>https://gtlx.github.io/hugo-blog/%E5%85%B3%E4%BA%8E/</loc>
   </url><url>
     <loc>https://gtlx.github.io/hugo-blog/p/%E5%88%A9%E7%94%A8github%E4%B8%8A%E7%9A%84github-pages%E9%83%A8%E7%BD%B2%E9%9D%99%E6%80%81%E7%BD%91%E7%AB%99/</loc>
   </url><url>
     <loc>https://gtlx.github.io/hugo-blog/p/%E5%A6%82%E4%BD%95%E5%B0%86manjaro%E7%B3%BB%E7%BB%9F%E8%BF%81%E7%A7%BB%E5%88%B0arch%E5%A6%82%E4%BD%95%E8%BF%9B%E8%A1%8C%E5%A4%87%E4%BB%BD%E5%92%8C%E4%BF%9D%E5%AD%98/</loc>
+  </url><url>
+    <loc>https://gtlx.github.io/hugo-blog/tags/%E6%8A%98%E8%85%BE/</loc>
   </url>
 </urlset>

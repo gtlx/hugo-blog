@@ -59,6 +59,397 @@
         <description></description>
         </item>
         <item>
+        <title>安卓刷机</title>
+        <link>https://gtlx.github.io/hugo-blog/p/%E5%AE%89%E5%8D%93%E5%88%B7%E6%9C%BA/</link>
+        <pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate>
+        
+        <guid>https://gtlx.github.io/hugo-blog/p/%E5%AE%89%E5%8D%93%E5%88%B7%E6%9C%BA/</guid>
+        <description>&lt;ul&gt;
+&lt;li&gt;详细刷机：[[红米k50刷机]]&lt;/li&gt;
+&lt;li&gt;&lt;a class=&#34;link&#34; href=&#34;https://docs.qq.com/doc/DWERIY0xxVWxIWFJz&#34;  target=&#34;_blank&#34; rel=&#34;noopener&#34;
+    &gt;机型代号网站&lt;/a&gt;
+&lt;a class=&#34;link&#34; href=&#34;https://magiskcn.com/&#34;  target=&#34;_blank&#34; rel=&#34;noopener&#34;
+    &gt;https://magiskcn.com/&lt;/a&gt;&lt;/li&gt;
+&lt;li&gt;所需工具：
+&lt;ul&gt;
+&lt;li&gt;pc端
+&lt;ul&gt;
+&lt;li&gt;&lt;a class=&#34;link&#34; href=&#34;https://www.atmb.top/&#34;  target=&#34;_blank&#34; rel=&#34;noopener&#34;
+    &gt;秋之盒&lt;/a&gt;&lt;/li&gt;
+&lt;li&gt;&lt;a class=&#34;link&#34; href=&#34;http//bigota.d.miui.com/tools/MiFlash2018-5-28-0.zip&#34;  target=&#34;_blank&#34; rel=&#34;noopener&#34;
+    &gt;小米线刷工具&lt;/a&gt;&lt;/li&gt;
+&lt;li&gt;&lt;a class=&#34;link&#34; href=&#34;https://wwp.lanzouf.com/ibAgw058d5eb&#34;  target=&#34;_blank&#34; rel=&#34;noopener&#34;
+    &gt;解包工具&lt;/a&gt;&lt;/li&gt;
+&lt;li&gt;&lt;a class=&#34;link&#34; href=&#34;https://wwp.lanzouf.com/iimjd058fzmb&#34;  target=&#34;_blank&#34; rel=&#34;noopener&#34;
+    &gt;adb命令行工具&lt;/a&gt;&lt;/li&gt;
+&lt;/ul&gt;
+&lt;/li&gt;
+&lt;/ul&gt;
+&lt;ul&gt;
+&lt;li&gt;安卓端
+&lt;ul&gt;
+&lt;li&gt;&lt;a class=&#34;link&#34; href=&#34;http://vtools.omarea.com/&#34;  target=&#34;_blank&#34; rel=&#34;noopener&#34;
+    &gt;scene5&lt;/a&gt;：安卓设备管理器&lt;/li&gt;
+&lt;li&gt;appops：权限管理工具&lt;/li&gt;
+&lt;/ul&gt;
+&lt;ul&gt;
+&lt;li&gt;管理root的工具：
+&lt;ul&gt;
+&lt;li&gt;&lt;a class=&#34;link&#34; href=&#34;https://github.com/topjohnwu/Magisk&#34;  target=&#34;_blank&#34; rel=&#34;noopener&#34;
+    &gt;magisk&lt;/a&gt;：面具
+&lt;ul&gt;
+&lt;li&gt;面具中文网&lt;/li&gt;
+&lt;/ul&gt;
+&lt;/li&gt;
+&lt;/ul&gt;
+&lt;/li&gt;
+&lt;li&gt;管理root后软件的工具：
+&lt;ul&gt;
+&lt;li&gt;&lt;a class=&#34;link&#34; href=&#34;https://github.com/LSPosed/LSPosed/releases/tag/v1.8.5&#34;  target=&#34;_blank&#34; rel=&#34;noopener&#34;
+    &gt;LSPosed模块&lt;/a&gt;：lsp框架（已停更）&lt;/li&gt;
+&lt;li&gt;&lt;a class=&#34;link&#34; href=&#34;https://github.com/mywalkb/LSPosed_mod&#34;  target=&#34;_blank&#34; rel=&#34;noopener&#34;
+    &gt;LSPosed_mod&lt;/a&gt;：新版LSP框架&lt;/li&gt;
+&lt;/ul&gt;
+&lt;/li&gt;
+&lt;/ul&gt;
+&lt;/li&gt;
+&lt;/ul&gt;
+&lt;/li&gt;
+&lt;/ul&gt;
+&lt;h3 id=&#34;备份字库&#34;&gt;备份字库
+&lt;/h3&gt;&lt;ul&gt;
+&lt;li&gt;&lt;a class=&#34;link&#34; href=&#34;https://www.bilibili.com/video/BV1bje8eVEjK&#34;  target=&#34;_blank&#34; rel=&#34;noopener&#34;
+    &gt;视频教程参考&lt;/a&gt;&lt;/li&gt;
+&lt;/ul&gt;
+&lt;h4 id=&#34;备份&#34;&gt;备份
+&lt;/h4&gt;&lt;h5 id=&#34;准备工作&#34;&gt;准备工作
+&lt;/h5&gt;&lt;ol&gt;
+&lt;li&gt;设备获取root权限&lt;/li&gt;
+&lt;li&gt;在开发者模式中开启usb调试：&lt;code&gt;adb shell&lt;/code&gt;&lt;/li&gt;
+&lt;li&gt;给予shell以root权限：&lt;code&gt;su&lt;/code&gt;&lt;/li&gt;
+&lt;/ol&gt;
+&lt;h5 id=&#34;开始备份&#34;&gt;开始备份
+&lt;/h5&gt;&lt;ol&gt;
+&lt;li&gt;在设备sdcard目录中创建用于存储备份的目录：
+&lt;ul&gt;
+&lt;li&gt;&lt;code&gt;mkdir /sdcard/000_Backup&lt;/code&gt;&lt;/li&gt;
+&lt;/ul&gt;
+&lt;/li&gt;
+&lt;li&gt;读取设备分区信息，屏蔽掉没有必要的userdata和缓存分区：&lt;/li&gt;
+&lt;/ol&gt;
+&lt;div class=&#34;highlight&#34;&gt;&lt;div class=&#34;chroma&#34;&gt;
+&lt;table class=&#34;lntable&#34;&gt;&lt;tr&gt;&lt;td class=&#34;lntd&#34;&gt;
+&lt;pre tabindex=&#34;0&#34; class=&#34;chroma&#34;&gt;&lt;code&gt;&lt;span class=&#34;lnt&#34;&gt;1
+&lt;/span&gt;&lt;/code&gt;&lt;/pre&gt;&lt;/td&gt;
+&lt;td class=&#34;lntd&#34;&gt;
+&lt;pre tabindex=&#34;0&#34; class=&#34;chroma&#34;&gt;&lt;code class=&#34;language-fallback&#34; data-lang=&#34;fallback&#34;&gt;&lt;span class=&#34;line&#34;&gt;&lt;span class=&#34;cl&#34;&gt;ls -1 /dev/block/bootdevice/by-name | grep -ixvE &amp;#34;userdata|cache&amp;#34; | while IFS= read -r name; do echo &amp;#34;dd if=/dev/block/bootdevice/by-name/$name of=/sdcard/000_Backup/$name.img&amp;#34; &amp;gt;&amp;gt; /sdcard/000_Backup/001_Backup.sh; echo &amp;#34;fastboot flash $name $name.img&amp;#34; &amp;gt;&amp;gt; /sdcard/000_Backup/002_Restore.bat; done
+&lt;/span&gt;&lt;/span&gt;&lt;/code&gt;&lt;/pre&gt;&lt;/td&gt;&lt;/tr&gt;&lt;/table&gt;
+&lt;/div&gt;
+&lt;/div&gt;&lt;ol start=&#34;3&#34;&gt;
+&lt;li&gt;使用多出来的sh脚本进行备份（dat脚本用于还原）
+&lt;ul&gt;
+&lt;li&gt;&lt;code&gt;sh /sdcard/000_Backup/001_Backup.sh&lt;/code&gt;&lt;/li&gt;
+&lt;/ul&gt;
+&lt;/li&gt;
+&lt;li&gt;找到&lt;strong&gt;persist.img&lt;/strong&gt;分区并删除，dat脚本中的最好也删除
+&lt;ul&gt;
+&lt;li&gt;&lt;strong&gt;ps&lt;/strong&gt;：刷入后可能损毁tee导致安全支付永久失效&lt;/li&gt;
+&lt;/ul&gt;
+&lt;/li&gt;
+&lt;li&gt;创建MD5值的表格用于日后验证备份文件是否损毁
+&lt;ul&gt;
+&lt;li&gt;&lt;code&gt;cd /sdcard/000_Backup &amp;amp;&amp;amp; md5sum * &amp;gt; /sdcard/000_Backup/003_MD5Hsah.txt&lt;/code&gt;&lt;/li&gt;
+&lt;/ul&gt;
+&lt;/li&gt;
+&lt;/ol&gt;
+&lt;h5 id=&#34;一些优化&#34;&gt;一些优化
+&lt;/h5&gt;&lt;ul&gt;
+&lt;li&gt;剔除官方线刷包中已有的分区（也可以防止还原时可能出现的版本冲突）：
+&lt;ul&gt;
+&lt;li&gt;此行命令运行较快&lt;/li&gt;
+&lt;/ul&gt;
+&lt;/li&gt;
+&lt;/ul&gt;
+&lt;div class=&#34;highlight&#34;&gt;&lt;div class=&#34;chroma&#34;&gt;
+&lt;table class=&#34;lntable&#34;&gt;&lt;tr&gt;&lt;td class=&#34;lntd&#34;&gt;
+&lt;pre tabindex=&#34;0&#34; class=&#34;chroma&#34;&gt;&lt;code&gt;&lt;span class=&#34;lnt&#34;&gt;1
+&lt;/span&gt;&lt;/code&gt;&lt;/pre&gt;&lt;/td&gt;
+&lt;td class=&#34;lntd&#34;&gt;
+&lt;pre tabindex=&#34;0&#34; class=&#34;chroma&#34;&gt;&lt;code class=&#34;language-fallback&#34; data-lang=&#34;fallback&#34;&gt;&lt;span class=&#34;line&#34;&gt;&lt;span class=&#34;cl&#34;&gt;sed -i -e &amp;#39;/ super.img/s/^/::/g&amp;#39; -e &amp;#39;/ system.img/s/^/::/g&amp;#39; -e &amp;#39;/ system_a.img/s/^/::/g&amp;#39; -e &amp;#39;/ system_b.img/s/^/::/g&amp;#39; -e &amp;#39;/ vendor.img/s/^/::/g&amp;#39; -e &amp;#39;/ vendor_a.img/s/^/::/g&amp;#39; -e &amp;#39;/ vendor_b.img/s/^/::/g&amp;#39; -e &amp;#39;/ mmcblk0.img/s/^/::/g&amp;#39; -e &amp;#39;/ sda.img/s/^/::/g&amp;#39; -e &amp;#39;/ sdb.img/s/^/::/g&amp;#39; -e &amp;#39;/ sdc.img/s/^/::/g&amp;#39; -e &amp;#39;/ sdd.img/s/^/::/g&amp;#39; -e &amp;#39;/ sde.img/s/^/::/g&amp;#39; -e &amp;#39;/ sdf.img/s/^/::/g&amp;#39; -e &amp;#39;/ sdg.img/s/^/::/g&amp;#39; /sdcard/000_Backup/002_Restore.bat
+&lt;/span&gt;&lt;/span&gt;&lt;/code&gt;&lt;/pre&gt;&lt;/td&gt;&lt;/tr&gt;&lt;/table&gt;
+&lt;/div&gt;
+&lt;/div&gt;&lt;ul&gt;
+&lt;li&gt;打包（打包过程很长耐心等待）
+&lt;ul&gt;
+&lt;li&gt;&lt;code&gt;cd /sdcard &amp;amp;&amp;amp; tar -zcpvf PartitionBackup.tgz 000_Backup&lt;/code&gt;&lt;/li&gt;
+&lt;/ul&gt;
+&lt;/li&gt;
+&lt;/ul&gt;
+&lt;h5 id=&#34;恢复&#34;&gt;恢复
+&lt;/h5&gt;&lt;ul&gt;
+&lt;li&gt;启动到&lt;strong&gt;fastboot&lt;/strong&gt;模式，执行&lt;code&gt;002_backup.bat&lt;/code&gt;&lt;/li&gt;
+&lt;/ul&gt;
+&lt;h2 id=&#34;准备工作-1&#34;&gt;准备工作
+&lt;/h2&gt;&lt;h3 id=&#34;1备份数据&#34;&gt;1.备份数据
+&lt;/h3&gt;&lt;h3 id=&#34;2-解除bl锁&#34;&gt;2. 解除BL锁
+&lt;/h3&gt;&lt;ul&gt;
+&lt;li&gt;&lt;a class=&#34;link&#34; href=&#34;https://www.miui.com/unlock/index.html&#34;  target=&#34;_blank&#34; rel=&#34;noopener&#34;
+    &gt;下载手机解锁工具&lt;/a&gt;&lt;/li&gt;
+&lt;li&gt;解锁（会清除手机数据）
+&lt;ul&gt;
+&lt;li&gt;等待七天&lt;/li&gt;
+&lt;li&gt;将手机关机，同时按下音量减和关机键进入&lt;strong&gt;FASTBOOT模式&lt;/strong&gt;&lt;/li&gt;
+&lt;li&gt;插入数据线，点击设置更新驱动，确认解锁&lt;/li&gt;
+&lt;/ul&gt;
+&lt;/li&gt;
+&lt;/ul&gt;
+&lt;h3 id=&#34;3-准备rom包&#34;&gt;3. 准备rom包
+&lt;/h3&gt;&lt;h4 id=&#34;xiaomirom&#34;&gt;xiaomiROM
+&lt;/h4&gt;&lt;ul&gt;
+&lt;li&gt;&lt;a class=&#34;link&#34; href=&#34;https://XiaomiROM.com&#34;  target=&#34;_blank&#34; rel=&#34;noopener&#34;
+    &gt;官网&lt;/a&gt;：小米官方rom整理
+&lt;ul&gt;
+&lt;li&gt;&lt;a class=&#34;link&#34; href=&#34;https://magiskcn.com/mi-hosts&#34;  target=&#34;_blank&#34; rel=&#34;noopener&#34;
+    &gt;原下载加速方案&lt;/a&gt;
+&lt;ul&gt;
+&lt;li&gt;把下载地址中 &lt;code&gt;bigota.d.miui.com&lt;/code&gt; 改成 &lt;code&gt;bkt-sgp-miui-ota-update-alisgp.oss-ap-southeast-1.aliyuncs.com&lt;/code&gt;&lt;/li&gt;
+&lt;/ul&gt;
+&lt;/li&gt;
+&lt;li&gt;&lt;a class=&#34;link&#34; href=&#34;https://www.bilibili.com/read/cv26623893/&#34;  target=&#34;_blank&#34; rel=&#34;noopener&#34;
+    &gt;下载加速方案&lt;/a&gt;：修改hosts文件 [[C3-01-02 系统通用#hosts文件修改]]&lt;/li&gt;
+&lt;/ul&gt;
+&lt;/li&gt;
+&lt;/ul&gt;
+&lt;h4 id=&#34;lineageos&#34;&gt;LineageOS
+&lt;/h4&gt;&lt;ul&gt;
+&lt;li&gt;&lt;a class=&#34;link&#34; href=&#34;https://lineageos.org/&#34;  target=&#34;_blank&#34; rel=&#34;noopener&#34;
+    &gt;官网&lt;/a&gt;&lt;/li&gt;
+&lt;/ul&gt;
+&lt;h5 id=&#34;lineageos卡刷方法&#34;&gt;LineageOS卡刷方法
+&lt;/h5&gt;&lt;ul&gt;
+&lt;li&gt;
+&lt;p&gt;刷入boot分区：&lt;code&gt;fastboot flash boot boot.img&lt;/code&gt;&lt;/p&gt;
+&lt;/li&gt;
+&lt;li&gt;
+&lt;p&gt;刷入dtbo分区：&lt;code&gt;fastboot flash dtbo dtbo.img&lt;/code&gt;&lt;/p&gt;
+&lt;/li&gt;
+&lt;li&gt;
+&lt;p&gt;刷入vendor_boot分区：&lt;code&gt;fastboot flash vendor_boot vendor_boot.img&lt;/code&gt;&lt;/p&gt;
+&lt;/li&gt;
+&lt;li&gt;
+&lt;p&gt;刷入recovery分区：&lt;code&gt;fastboot flash recovery recovery.img&lt;/code&gt;&lt;/p&gt;
+&lt;/li&gt;
+&lt;li&gt;
+&lt;p&gt;重启进入recovery分区：&lt;code&gt;fastboot reboot-recovery&lt;/code&gt;&lt;/p&gt;
+&lt;/li&gt;
+&lt;li&gt;
+&lt;p&gt;在设备上，选择“&lt;strong&gt;Apply Update&lt;/strong&gt;”，然后选择“&lt;strong&gt;Apply from ADB&lt;/strong&gt;”以开始旁加载。&lt;/p&gt;
+&lt;/li&gt;
+&lt;li&gt;
+&lt;p&gt;输入：&lt;code&gt;adb -d sideload&lt;/code&gt;&lt;/p&gt;
+&lt;p&gt;&lt;a class=&#34;link&#34; href=&#34;https://mirrors.tuna.tsinghua.edu.cn/help/lineageOS/&#34;  target=&#34;_blank&#34; rel=&#34;noopener&#34;
+    &gt;https://mirrors.tuna.tsinghua.edu.cn/help/lineageOS/&lt;/a&gt;&lt;/p&gt;
+&lt;/li&gt;
+&lt;/ul&gt;
+&lt;h5 id=&#34;小米9&#34;&gt;小米9：
+&lt;/h5&gt;&lt;ul&gt;
+&lt;li&gt;&lt;a class=&#34;link&#34; href=&#34;https://xdaforums.com/t/rom-12-cepheus-lineageos-19-1-unofficial-22-05-2022.4408133/&#34;  target=&#34;_blank&#34; rel=&#34;noopener&#34;
+    &gt;LineageOS 19.1论坛&lt;/a&gt;
+&lt;ul&gt;
+&lt;li&gt;&lt;a class=&#34;link&#34; href=&#34;https://androidfilehost.com/?fid=14655340768118476494&#34;  target=&#34;_blank&#34; rel=&#34;noopener&#34;
+    &gt;镜像下载地址&lt;/a&gt;&lt;/li&gt;
+&lt;/ul&gt;
+&lt;/li&gt;
+&lt;/ul&gt;
+&lt;h5 id=&#34;redmi-note-12-turbo开机短接点&#34;&gt;Redmi Note 12 Turbo：开机短接点
+&lt;/h5&gt;&lt;ul&gt;
+&lt;li&gt;&lt;a class=&#34;link&#34; href=&#34;https://xdaforums.com/t/all-in-one-poco-f5-redmi-note-12-turbo-marble-unlock-bootloader-root-flash-twrp-flash-rom.4585587/&#34;  target=&#34;_blank&#34; rel=&#34;noopener&#34;
+    &gt;教程&lt;/a&gt;&lt;/li&gt;
+&lt;li&gt;miui14，&lt;a class=&#34;link&#34; href=&#34;https://xiaomirom.com/download/redmi-note-12-turbo-poco-f5-marble-stable-V14.0.20.0.TMRCNXM/#china-fastboot&#34;  target=&#34;_blank&#34; rel=&#34;noopener&#34;
+    &gt;安卓13线刷包&lt;/a&gt;&lt;/li&gt;
+&lt;li&gt;&lt;a class=&#34;link&#34; href=&#34;https://crdroid.net/downloads#marble&#34;  target=&#34;_blank&#34; rel=&#34;noopener&#34;
+    &gt;crdroid&lt;/a&gt;：无谷歌全家桶
+&lt;ul&gt;
+&lt;li&gt;通过第三方下载器如gopeed下载，可不限速。[[常用网址#^aea701]]&lt;/li&gt;
+&lt;li&gt;&lt;a class=&#34;link&#34; href=&#34;https://xdaforums.com/t/rom-14-paranoid-android-uvite-poco-f5-redmi-note-12-turbo-marble.4635595/&#34;  target=&#34;_blank&#34; rel=&#34;noopener&#34;
+    &gt;paranoid android&lt;/a&gt;&lt;/li&gt;
+&lt;/ul&gt;
+&lt;/li&gt;
+&lt;li&gt;Lineage22：&lt;a class=&#34;link&#34; href=&#34;https://wiki.lineageos.org/devices/marble/variant3/&#34;  target=&#34;_blank&#34; rel=&#34;noopener&#34;
+    &gt;官网下载地址&lt;/a&gt;
+&lt;ul&gt;
+&lt;li&gt;&lt;a class=&#34;link&#34; href=&#34;https://xdaforums.com/t/rom-15-official-lineageos-22-for-poco-f5-redmi-note-12-turbo.4740244/&#34;  target=&#34;_blank&#34; rel=&#34;noopener&#34;
+    &gt;下载地址&lt;/a&gt;&lt;/li&gt;
+&lt;li&gt;&lt;a class=&#34;link&#34; href=&#34;https://wiki.lineageos.org/devices/marble/install/variant3/#flashing-additional-partitions&#34;  target=&#34;_blank&#34; rel=&#34;noopener&#34;
+    &gt;刷入教程&lt;/a&gt;：&lt;/li&gt;
+&lt;/ul&gt;
+&lt;/li&gt;
+&lt;/ul&gt;
+&lt;h2 id=&#34;开始刷机&#34;&gt;开始刷机
+&lt;/h2&gt;&lt;ul&gt;
+&lt;li&gt;&lt;strong&gt;Ps&lt;/strong&gt;：
+&lt;ul&gt;
+&lt;li&gt;&lt;strong&gt;跨版本升级&lt;/strong&gt;需要线刷底包。如安卓13要升级到15，需要线刷14的官方包，再卡刷到安卓15。&lt;/li&gt;
+&lt;li&gt;卡刷时，提示错误&lt;strong&gt;找不到分区路径/system_root&lt;/strong&gt;，代表删除了System系统分区。此时只能通过线刷救砖安装系统后才能正常的安装第三方rec进行卡刷。(花费1天时间搞明白原因)&lt;/li&gt;
+&lt;/ul&gt;
+&lt;/li&gt;
+&lt;/ul&gt;
+&lt;h4 id=&#34;线刷&#34;&gt;线刷
+&lt;/h4&gt;&lt;ul&gt;
+&lt;li&gt;下载&lt;a class=&#34;link&#34; href=&#34;https://XiaomiROM.com&#34;  target=&#34;_blank&#34; rel=&#34;noopener&#34;
+    &gt;对应的线刷包&lt;/a&gt;&lt;/li&gt;
+&lt;li&gt;下载&lt;a class=&#34;link&#34; href=&#34;http://bigota.d.miui.com/tools/MiFlash2018-5-28-0.zip&#34;  target=&#34;_blank&#34; rel=&#34;noopener&#34;
+    &gt;小米线刷工具&lt;/a&gt;&lt;/li&gt;
+&lt;/ul&gt;
+&lt;ol&gt;
+&lt;li&gt;对线刷包进行俩次解压&lt;/li&gt;
+&lt;li&gt;打开线刷工具
+&lt;ol&gt;
+&lt;li&gt;安装驱动&lt;/li&gt;
+&lt;li&gt;选择解压后的线刷包&lt;/li&gt;
+&lt;li&gt;刷机（估计耗时1-10分钟）&lt;/li&gt;
+&lt;/ol&gt;
+&lt;/li&gt;
+&lt;/ol&gt;
+&lt;h4 id=&#34;卡刷&#34;&gt;卡刷
+&lt;/h4&gt;&lt;h5 id=&#34;刷机前的格式化&#34;&gt;刷机前的格式化
+&lt;/h5&gt;&lt;ul&gt;
+&lt;li&gt;&lt;a class=&#34;link&#34; href=&#34;https://www.bilibili.com/read/cv8230021/&#34;  target=&#34;_blank&#34; rel=&#34;noopener&#34;
+    &gt;双清，三清以及四清的区别&lt;/a&gt;&lt;/li&gt;
+&lt;li&gt;&lt;strong&gt;双清&lt;/strong&gt;：选择&lt;code&gt;Dalvik Cache&lt;/code&gt;、&lt;code&gt;Cache&lt;/code&gt;。
+&lt;ul&gt;
+&lt;li&gt;双清只清除缓存，不清除系统和用户数据。双清一般用在相同系统版本进行ota升级时。&lt;/li&gt;
+&lt;/ul&gt;
+&lt;/li&gt;
+&lt;li&gt;&lt;strong&gt;三清&lt;/strong&gt;：选择&lt;code&gt;Dalvik Cache&lt;/code&gt;、&lt;code&gt;Cache&lt;/code&gt;、&lt;code&gt;Data&lt;/code&gt;。
+&lt;ul&gt;
+&lt;li&gt;三清后刷机失败，是还可以进入系统的。此时的刷机失败指的是twrp再输入检查时会出现错误&lt;/li&gt;
+&lt;/ul&gt;
+&lt;/li&gt;
+&lt;li&gt;&lt;strong&gt;四清&lt;/strong&gt;：选择&lt;code&gt;Dalvik Cache&lt;/code&gt;、&lt;code&gt;Cache&lt;/code&gt;、&lt;code&gt;Data&lt;/code&gt;、&lt;code&gt;System&lt;/code&gt;。（一般不选）
+&lt;ul&gt;
+&lt;li&gt;四清是最完整的wipe，把系统、缓存、用户数据等全部清除，清除了之后如果刷机失败，会进不去系统。&lt;/li&gt;
+&lt;/ul&gt;
+&lt;/li&gt;
+&lt;/ul&gt;
+&lt;h5 id=&#34;第三方rec&#34;&gt;第三方rec
+&lt;/h5&gt;&lt;ul&gt;
+&lt;li&gt;
+&lt;p&gt;下载&lt;a class=&#34;link&#34; href=&#34;https://sourceforge.net/projects/recovery-for-xiaomi-devices/files/&#34;  target=&#34;_blank&#34; rel=&#34;noopener&#34;
+    &gt;对应机型&lt;/a&gt;设备代号的 &lt;strong&gt;twrp&lt;/strong&gt;&lt;/p&gt;
+&lt;ul&gt;
+&lt;li&gt;fastboot命令查看：[[C3-02-03 Android#^3bdf55]]&lt;/li&gt;
+&lt;/ul&gt;
+&lt;/li&gt;
+&lt;li&gt;
+&lt;p&gt;&lt;strong&gt;TWRP&lt;/strong&gt;：是一款第三方的刷机软件，主要作用包括刷机、备份，救砖等。&lt;/p&gt;
+&lt;ul&gt;
+&lt;li&gt;&lt;a class=&#34;link&#34; href=&#34;https://twrp.me/&#34;  target=&#34;_blank&#34; rel=&#34;noopener&#34;
+    &gt;官网&lt;/a&gt;：小米9可以直接官网下载
+&lt;ul&gt;
+&lt;li&gt;Redmi Note 12 Turbo（marble）： &lt;a class=&#34;link&#34; href=&#34;https://sourceforge.net/projects/recovery-for-xiaomi-devices/files/marble/&#34;  target=&#34;_blank&#34; rel=&#34;noopener&#34;
+    &gt;下载地址&lt;/a&gt;
+&lt;ul&gt;
+&lt;li&gt;澎湃系统刷第三方rec需要先刷入recovery分区，再刷入原包的boot镜像，重启后才能进入rec&lt;/li&gt;
+&lt;/ul&gt;
+&lt;/li&gt;
+&lt;/ul&gt;
+&lt;/li&gt;
+&lt;/ul&gt;
+&lt;/li&gt;
+&lt;li&gt;
+&lt;p&gt;&lt;strong&gt;橙狐（OrangeFox）&lt;/strong&gt;：&lt;/p&gt;
+&lt;ul&gt;
+&lt;li&gt;&lt;a class=&#34;link&#34; href=&#34;https://orangefox.download/zh-CN&#34;  target=&#34;_blank&#34; rel=&#34;noopener&#34;
+    &gt;官网&lt;/a&gt; :可直接刷入recovery分区&lt;/li&gt;
+&lt;/ul&gt;
+&lt;/li&gt;
+&lt;/ul&gt;
+&lt;h4 id=&#34;注意事项&#34;&gt;&lt;a class=&#34;link&#34; href=&#34;https://web.vip.miui.com/page/info/mio/mio/detail?postId=36201233&amp;amp;app_version=dev.20051&#34;  target=&#34;_blank&#34; rel=&#34;noopener&#34;
+    &gt;注意事项&lt;/a&gt;
+&lt;/h4&gt;&lt;h2 id=&#34;刷机后续&#34;&gt;刷机后续
+&lt;/h2&gt;&lt;h4 id=&#34;获取root权限&#34;&gt;获取root权限
+&lt;/h4&gt;&lt;h5 id=&#34;twrp修补法&#34;&gt;twrp修补法
+&lt;/h5&gt;&lt;ul&gt;
+&lt;li&gt;下载面具&lt;/li&gt;
+&lt;li&gt;将面具后缀名&lt;strong&gt;apk&lt;/strong&gt;改为&lt;strong&gt;zip&lt;/strong&gt;&lt;/li&gt;
+&lt;li&gt;进入twrp刷入更改后的压缩包&lt;/li&gt;
+&lt;/ul&gt;
+&lt;h5 id=&#34;boot修补法&#34;&gt;boot修补法
+&lt;/h5&gt;&lt;ul&gt;
+&lt;li&gt;下载&lt;a class=&#34;link&#34; href=&#34;https://wwp.lanzouf.com/iimjd058fzmb&#34;  target=&#34;_blank&#34; rel=&#34;noopener&#34;
+    &gt;adb命令行工具&lt;/a&gt;
+&lt;ul&gt;
+&lt;li&gt;解压，备用&lt;/li&gt;
+&lt;/ul&gt;
+&lt;/li&gt;
+&lt;li&gt;下载Magisk（面具）
+&lt;ul&gt;
+&lt;li&gt;&lt;a class=&#34;link&#34; href=&#34;https://magiskcn.com/&#34;  target=&#34;_blank&#34; rel=&#34;noopener&#34;
+    &gt;Magisk中文网&lt;/a&gt;&lt;/li&gt;
+&lt;li&gt;&lt;a class=&#34;link&#34; href=&#34;https://github.com/topjohnwu/Magisk&#34;  target=&#34;_blank&#34; rel=&#34;noopener&#34;
+    &gt;开源地址&lt;/a&gt;&lt;/li&gt;
+&lt;li&gt;将面具复制到手机里，并且安装&lt;/li&gt;
+&lt;/ul&gt;
+&lt;/li&gt;
+&lt;/ul&gt;
+&lt;ul&gt;
+&lt;li&gt;
+&lt;p&gt;解包：&lt;/p&gt;
+&lt;ol&gt;
+&lt;li&gt;下载&lt;a class=&#34;link&#34; href=&#34;https://wwp.lanzouf.com/ibAgw058d5eb&#34;  target=&#34;_blank&#34; rel=&#34;noopener&#34;
+    &gt;解包工具&lt;/a&gt;&lt;/li&gt;
+&lt;li&gt;解压完整包和解包工具（查看解压后的完整包是否有&lt;strong&gt;boot.img&lt;/strong&gt;这个文件，如果没有再进行下一步）&lt;/li&gt;
+&lt;li&gt;将完整包&lt;strong&gt;payload.bin&lt;/strong&gt;文件的放在解压包的&lt;strong&gt;payload_input&lt;/strong&gt;文件夹里&lt;/li&gt;
+&lt;li&gt;将解包后的&lt;strong&gt;boot.img&lt;/strong&gt;复制到手机里&lt;/li&gt;
+&lt;/ol&gt;
+&lt;/li&gt;
+&lt;li&gt;
+&lt;p&gt;开始刷入：&lt;/p&gt;
+&lt;ol&gt;
+&lt;li&gt;打开面具，点击安装，选择&lt;strong&gt;选择并修补一个文件&lt;/strong&gt;，选择手机里的&lt;strong&gt;boot.img&lt;/strong&gt;文件进行修复&lt;/li&gt;
+&lt;li&gt;电脑打开&lt;strong&gt;手机内部存储设备&lt;/strong&gt;，打开&lt;strong&gt;Download&lt;/strong&gt;目录，将&lt;strong&gt;magisk_patched-24300_82wTg.img&lt;/strong&gt;文件复制到adb命令行文件夹的根目录&lt;/li&gt;
+&lt;li&gt;将手机关机，按住音量下加开机键进入&lt;strong&gt;FASTBOOT模式&lt;/strong&gt;&lt;/li&gt;
+&lt;li&gt;点击解压后的adb命令行工具中的&lt;strong&gt;打开CMD命令行.bat&lt;/strong&gt;文件
+&lt;ul&gt;
+&lt;li&gt;输入以下命令：&lt;code&gt;fastboot flash boot &amp;lt;修补后Download目录下的文件名&amp;gt;&lt;/code&gt;&lt;/li&gt;
+&lt;li&gt;见到&lt;code&gt;Finished.&lt;/code&gt;说明刷入成功&lt;/li&gt;
+&lt;/ul&gt;
+&lt;/li&gt;
+&lt;li&gt;输入&lt;code&gt;fastboot reboot&lt;/code&gt;重启设备&lt;/li&gt;
+&lt;/ol&gt;
+&lt;/li&gt;
+&lt;/ul&gt;
+&lt;h5 id=&#34;安装lsposed模块&#34;&gt;安装LSPosed模块
+&lt;/h5&gt;&lt;ol&gt;
+&lt;li&gt;打开面具，点击设置，找到magisk栏，开启zygisk(beta)选项&lt;/li&gt;
+&lt;li&gt;下载&lt;a class=&#34;link&#34; href=&#34;https://github.com/mywalkb/LSPosed_mod&#34;  target=&#34;_blank&#34; rel=&#34;noopener&#34;
+    &gt;LSPosed模块&lt;/a&gt;：面具是24.1版本以上的下载带&lt;strong&gt;zygisk&lt;/strong&gt;的&lt;/li&gt;
+&lt;li&gt;点击模块安装&lt;/li&gt;
+&lt;/ol&gt;
+&lt;h5 id=&#34;更新系统&#34;&gt;更新系统
+&lt;/h5&gt;&lt;h6 id=&#34;查询手机是否是ab分区&#34;&gt;查询手机是否是ab分区
+&lt;/h6&gt;&lt;ul&gt;
+&lt;li&gt;&lt;code&gt;adb shell getprop ro.build.ab_update&lt;/code&gt;&lt;/li&gt;
+&lt;/ul&gt;
+&lt;h6 id=&#34;更新&#34;&gt;更新
+&lt;/h6&gt;&lt;ul&gt;
+&lt;li&gt;下载更新完整包，等待下载完成，&lt;strong&gt;不要重启更新&lt;/strong&gt;&lt;/li&gt;
+&lt;li&gt;进入面具，点击&lt;strong&gt;magisk安装&lt;/strong&gt;，安装到&lt;strong&gt;未使用的槽位(OAT后)&lt;/strong&gt;&lt;/li&gt;
+&lt;/ul&gt;
+&lt;h4 id=&#34;常用模块&#34;&gt;常用模块
+&lt;/h4&gt;&lt;ul&gt;
+&lt;li&gt;能别装就别装，极简原则&lt;/li&gt;
+&lt;/ul&gt;
+&lt;ul&gt;
+&lt;li&gt;救砖模块&lt;/li&gt;
+&lt;li&gt;&lt;a class=&#34;link&#34; href=&#34;https://github.com/LSPosed/LSPosed/releases/tag/v1.8.5&#34;  target=&#34;_blank&#34; rel=&#34;noopener&#34;
+    &gt;LSPosed模块&lt;/a&gt;&lt;/li&gt;
+&lt;/ul&gt;
+&lt;h3 id=&#34;内核的刷入&#34;&gt;内核的刷入
+&lt;/h3&gt;</description>
+        </item>
+        <item>
         <title>关于</title>
         <link>https://gtlx.github.io/hugo-blog/%E5%85%B3%E4%BA%8E/</link>
         <pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate>
