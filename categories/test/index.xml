@@ -5,7 +5,6 @@
         <link>https://blog.gtlx.ltd/categories/test/</link>
         <description>Recent content in 页面 on 演示站点</description>
         <generator>Hugo -- gohugo.io</generator>
-        <language>zh-cn</language>
-        <copyright>示例人员</copyright><atom:link href="https://blog.gtlx.ltd/categories/test/index.xml" rel="self" type="application/rss+xml" />
+        <language>zh-cn</language><atom:link href="https://blog.gtlx.ltd/categories/test/index.xml" rel="self" type="application/rss+xml" />
     </channel>
 </rss>
