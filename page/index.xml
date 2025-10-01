@@ -15,24 +15,6 @@
         <description></description>
         </item>
         <item>
-        <title></title>
-        <link>https://blog.gtlx.ltd/</link>
-        <pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate>
-        
-        <guid>https://blog.gtlx.ltd/</guid>
-        <description>&lt;p&gt;title: &amp;ldquo;好物&amp;rdquo;
-layout: &amp;ldquo;goods&amp;rdquo;
-slug: &amp;ldquo;goods&amp;rdquo;
-menu:
-main:
-weight: -10 # 视情况更改
-params:
-icon: # 填写 svg 名称
-comments: false # 按需开启
-license: false&lt;/p&gt;
-</description>
-        </item>
-        <item>
         <title>关于</title>
         <link>https://blog.gtlx.ltd/%E5%85%B3%E4%BA%8E/</link>
         <pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate>
