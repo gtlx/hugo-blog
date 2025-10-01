@@ -1,0 +1,870 @@
+<!DOCTYPE html>
+<html lang="zh-cn" dir="ltr">
+    <head><meta charset='utf-8'>
+<meta name='viewport' content='width=device-width, initial-scale=1'><meta name='description' content=" 官方文档手册： 镜像包下载： 清华源 一. 安装前的其他设置（可以省略此步） 改字体：setfont /usr/share/kbd/consolefonts/ 改键盘布局：loadkeys de-latin1 以上的看情况可以省略，以下的校准时间不建议省略\n">
+<title>arch安装</title>
+
+<link rel='canonical' href='https://blog.gtlx.ltd/p/arch%E5%AE%89%E8%A3%85/'>
+
+<link rel="stylesheet" href="/scss/style.min.663803bebe609202d5b39d848f2d7c2dc8b598a2d879efa079fa88893d29c49c.css"><meta property='og:title' content="arch安装">
+<meta property='og:description' content=" 官方文档手册： 镜像包下载： 清华源 一. 安装前的其他设置（可以省略此步） 改字体：setfont /usr/share/kbd/consolefonts/ 改键盘布局：loadkeys de-latin1 以上的看情况可以省略，以下的校准时间不建议省略\n">
+<meta property='og:url' content='https://blog.gtlx.ltd/p/arch%E5%AE%89%E8%A3%85/'>
+<meta property='og:site_name' content='演示站点'>
+<meta property='og:type' content='article'><meta property='article:section' content='Post' />
+<meta name="twitter:title" content="arch安装">
+<meta name="twitter:description" content=" 官方文档手册： 镜像包下载： 清华源 一. 安装前的其他设置（可以省略此步） 改字体：setfont /usr/share/kbd/consolefonts/ 改键盘布局：loadkeys de-latin1 以上的看情况可以省略，以下的校准时间不建议省略\n">
+    </head>
+    <body class="
+    article-page
+    ">
+    <script>
+        (function() {
+            const colorSchemeKey = 'StackColorScheme';
+            if(!localStorage.getItem(colorSchemeKey)){
+                localStorage.setItem(colorSchemeKey, "auto");
+            }
+        })();
+    </script><script>
+    (function() {
+        const colorSchemeKey = 'StackColorScheme';
+        const colorSchemeItem = localStorage.getItem(colorSchemeKey);
+        const supportDarkMode = window.matchMedia('(prefers-color-scheme: dark)').matches === true;
+
+        if (colorSchemeItem == 'dark' || colorSchemeItem === 'auto' && supportDarkMode) {
+            
+
+            document.documentElement.dataset.scheme = 'dark';
+        } else {
+            document.documentElement.dataset.scheme = 'light';
+        }
+    })();
+</script>
+<div class="container main-container flex on-phone--column extended"><aside class="sidebar left-sidebar sticky ">
+    <button class="hamburger hamburger--spin" type="button" id="toggle-menu" aria-label="切换菜单">
+        <span class="hamburger-box">
+            <span class="hamburger-inner"></span>
+        </span>
+    </button>
+
+    <header>
+        
+            
+            <figure class="site-avatar">
+                <a href="/">
+                
+                    
+                    
+                    
+                        
+                        <img src="/img/avatar_hu_f509edb42ecc0ebd.png" width="300"
+                            height="300" class="site-logo" loading="lazy" alt="Avatar">
+                    
+                
+                </a>
+                
+                    <span class="emoji">🍥</span>
+                
+            </figure>
+            
+        
+        
+        <div class="site-meta">
+            <h1 class="site-name"><a href="/">演示站点</a></h1>
+            <h2 class="site-description">演示说明</h2>
+        </div>
+    </header><ol class="menu-social">
+            
+                <li>
+                    <a 
+                        href='https://github.com/CaiJimmy/hugo-theme-stack'
+                        target="_blank"
+                        title="GitHub"
+                        rel="me"
+                    >
+                        
+                        
+                            <svg xmlns="http://www.w3.org/2000/svg" class="icon icon-tabler icon-tabler-brand-github" width="24" height="24" viewBox="0 0 24 24" stroke-width="2" stroke="currentColor" fill="none" stroke-linecap="round" stroke-linejoin="round">
+  <path stroke="none" d="M0 0h24v24H0z" fill="none"/>
+  <path d="M9 19c-4.3 1.4 -4.3 -2.5 -6 -3m12 5v-3.5c0 -1 .1 -1.4 -.5 -2c2.8 -.3 5.5 -1.4 5.5 -6a4.6 4.6 0 0 0 -1.3 -3.2a4.2 4.2 0 0 0 -.1 -3.2s-1.1 -.3 -3.5 1.3a12.3 12.3 0 0 0 -6.2 0c-2.4 -1.6 -3.5 -1.3 -3.5 -1.3a4.2 4.2 0 0 0 -.1 3.2a4.6 4.6 0 0 0 -1.3 3.2c0 4.6 2.7 5.7 5.5 6c-.6 .6 -.6 1.2 -.5 2v3.5" />
+</svg>
+
+
+
+                        
+                    </a>
+                </li>
+            
+                <li>
+                    <a 
+                        href='https://twitter.com'
+                        target="_blank"
+                        title="Twitter"
+                        rel="me"
+                    >
+                        
+                        
+                            <svg xmlns="http://www.w3.org/2000/svg" class="icon icon-tabler icon-tabler-brand-twitter" width="24" height="24" viewBox="0 0 24 24" stroke-width="2" stroke="currentColor" fill="none" stroke-linecap="round" stroke-linejoin="round">
+  <path stroke="none" d="M0 0h24v24H0z" fill="none"/>
+  <path d="M22 4.01c-1 .49 -1.98 .689 -3 .99c-1.121 -1.265 -2.783 -1.335 -4.38 -.737s-2.643 2.06 -2.62 3.737v1c-3.245 .083 -6.135 -1.395 -8 -4c0 0 -4.182 7.433 4 11c-1.872 1.247 -3.739 2.088 -6 2c3.308 1.803 6.913 2.423 10.034 1.517c3.58 -1.04 6.522 -3.723 7.651 -7.742a13.84 13.84 0 0 0 .497 -3.753c-.002 -.249 1.51 -2.772 1.818 -4.013z" />
+</svg>
+
+
+
+                        
+                    </a>
+                </li>
+            
+        </ol><ol class="menu" id="main-menu">
+        
+        
+        
+        <li >
+            <a href='/' >
+                
+                
+                
+                    <svg xmlns="http://www.w3.org/2000/svg" class="icon icon-tabler icon-tabler-home" width="24" height="24" viewBox="0 0 24 24" stroke-width="2" stroke="currentColor" fill="none" stroke-linecap="round" stroke-linejoin="round">
+  <path stroke="none" d="M0 0h24v24H0z"/>
+  <polyline points="5 12 3 12 12 3 21 12 19 12" />
+  <path d="M5 12v7a2 2 0 0 0 2 2h10a2 2 0 0 0 2 -2v-7" />
+  <path d="M9 21v-6a2 2 0 0 1 2 -2h2a2 2 0 0 1 2 2v6" />
+</svg>
+
+
+
+                
+                <span>主页</span>
+            </a>
+        </li>
+        
+        
+        <li >
+            <a href='/%E5%85%B3%E4%BA%8E/' >
+                
+                
+                
+                    <svg xmlns="http://www.w3.org/2000/svg" class="icon icon-tabler icon-tabler-user" width="24" height="24" viewBox="0 0 24 24" stroke-width="2" stroke="currentColor" fill="none" stroke-linecap="round" stroke-linejoin="round">
+  <path stroke="none" d="M0 0h24v24H0z"/>
+  <circle cx="12" cy="7" r="4" />
+  <path d="M6 21v-2a4 4 0 0 1 4 -4h4a4 4 0 0 1 4 4v2" />
+</svg>
+
+
+
+                
+                <span>关于</span>
+            </a>
+        </li>
+        
+        
+        <li >
+            <a href='/archives/' >
+                
+                
+                
+                    <svg xmlns="http://www.w3.org/2000/svg" class="icon icon-tabler icon-tabler-archive" width="24" height="24" viewBox="0 0 24 24" stroke-width="2" stroke="currentColor" fill="none" stroke-linecap="round" stroke-linejoin="round">
+  <path stroke="none" d="M0 0h24v24H0z"/>
+  <rect x="3" y="4" width="18" height="4" rx="2" />
+  <path d="M5 8v10a2 2 0 0 0 2 2h10a2 2 0 0 0 2 -2v-10" />
+  <line x1="10" y1="12" x2="14" y2="12" />
+</svg>
+
+
+
+                
+                <span>归档</span>
+            </a>
+        </li>
+        
+        
+        <li >
+            <a href='/search/' >
+                
+                
+                
+                    <svg xmlns="http://www.w3.org/2000/svg" class="icon icon-tabler icon-tabler-search" width="24" height="24" viewBox="0 0 24 24" stroke-width="2" stroke="currentColor" fill="none" stroke-linecap="round" stroke-linejoin="round">
+  <path stroke="none" d="M0 0h24v24H0z"/>
+  <circle cx="10" cy="10" r="7" />
+  <line x1="21" y1="21" x2="15" y2="15" />
+</svg>
+
+
+
+                
+                <span>搜索</span>
+            </a>
+        </li>
+        
+        
+        <li >
+            <a href='/%E5%8F%8B%E9%93%BE/' >
+                
+                
+                
+                    <svg xmlns="http://www.w3.org/2000/svg" class="icon icon-tabler icon-tabler-link" width="24" height="24" viewBox="0 0 24 24" stroke-width="2" stroke="currentColor" fill="none" stroke-linecap="round" stroke-linejoin="round">
+  <path stroke="none" d="M0 0h24v24H0z"/>
+  <path d="M10 14a3.5 3.5 0 0 0 5 0l4 -4a3.5 3.5 0 0 0 -5 -5l-.5 .5" />
+  <path d="M14 10a3.5 3.5 0 0 0 -5 0l-4 4a3.5 3.5 0 0 0 5 5l.5 -.5" />
+</svg>
+
+
+
+                
+                <span>友链</span>
+            </a>
+        </li>
+        
+        <li class="menu-bottom-section">
+            <ol class="menu">
+
+                
+                    <li id="dark-mode-toggle">
+                        <svg xmlns="http://www.w3.org/2000/svg" class="icon icon-tabler icon-tabler-toggle-left" width="24" height="24" viewBox="0 0 24 24" stroke-width="2" stroke="currentColor" fill="none" stroke-linecap="round" stroke-linejoin="round">
+  <path stroke="none" d="M0 0h24v24H0z"/>
+  <circle cx="8" cy="12" r="2" />
+  <rect x="2" y="6" width="20" height="12" rx="6" />
+</svg>
+
+
+
+                        <svg xmlns="http://www.w3.org/2000/svg" class="icon icon-tabler icon-tabler-toggle-right" width="24" height="24" viewBox="0 0 24 24" stroke-width="2" stroke="currentColor" fill="none" stroke-linecap="round" stroke-linejoin="round">
+  <path stroke="none" d="M0 0h24v24H0z"/>
+  <circle cx="16" cy="12" r="2" />
+  <rect x="2" y="6" width="20" height="12" rx="6" />
+</svg>
+
+
+
+                        <span>暗色模式</span>
+                    </li>
+                
+            </ol>
+        </li>
+    </ol>
+</aside>
+
+    <aside class="sidebar right-sidebar sticky">
+        
+            
+                
+    <section class="widget archives">
+        <div class="widget-icon">
+            <svg xmlns="http://www.w3.org/2000/svg" class="icon icon-tabler icon-tabler-hash" width="24" height="24" viewBox="0 0 24 24" stroke-width="2" stroke="currentColor" fill="none" stroke-linecap="round" stroke-linejoin="round">
+  <path stroke="none" d="M0 0h24v24H0z"/>
+  <line x1="5" y1="9" x2="19" y2="9" />
+  <line x1="5" y1="15" x2="19" y2="15" />
+  <line x1="11" y1="4" x2="7" y2="20" />
+  <line x1="17" y1="4" x2="13" y2="20" />
+</svg>
+
+
+
+        </div>
+        <h2 class="widget-title section-title">目录</h2>
+        
+        <div class="widget--toc">
+            <nav id="TableOfContents">
+  <ol>
+    <li><a href="#一-安装前的其他设置可以省略此步">一. 安装前的其他设置（可以省略此步）</a>
+      <ol>
+        <li>
+          <ol>
+            <li><a href="#其他一些小设置">其他一些小设置</a></li>
+            <li><a href="#换源">换源：</a></li>
+          </ol>
+        </li>
+      </ol>
+    </li>
+    <li><a href="#二-硬盘分区-lsblk-查看硬盘分区">二. 硬盘分区 <code>lsblk</code> （查看硬盘分区）</a>
+      <ol>
+        <li>
+          <ol>
+            <li><a href="#1-删除分区-">1. 删除分区 ：</a></li>
+            <li><a href="#2-设置分区表">2. 设置分区表</a></li>
+            <li><a href="#3-分区">3. 分区</a></li>
+            <li><a href="#4-格式化分区">4. 格式化分区</a></li>
+            <li><a href="#5-挂载分区不挂载会报错">5. 挂载分区（不挂载会报错）</a></li>
+          </ol>
+        </li>
+      </ol>
+    </li>
+    <li><a href="#三-配置liunx具体的可以见官方手册">三. 配置Liunx（具体的可以见官方手册）</a>
+      <ol>
+        <li>
+          <ol>
+            <li><a href="#1下载linux内核">1.下载Linux内核</a></li>
+            <li><a href="#2-生成-fstab-文件分区">2. 生成 fstab 文件分区:</a></li>
+            <li><a href="#3-设置本地化">3. 设置本地化</a></li>
+          </ol>
+        </li>
+      </ol>
+    </li>
+    <li><a href="#四-本地化和引导">四. 本地化和引导</a>
+      <ol>
+        <li>
+          <ol>
+            <li><a href="#1-安装一些常用应用和必要文件">1. 安装一些常用应用和必要文件</a></li>
+            <li><a href="#2-设置-root-密码创建日常用户">2. 设置 Root 密码,创建日常用户：</a></li>
+            <li><a href="#3-安装引导">3. 安装引导</a></li>
+            <li><a href="#4-重启安装">4. 重启安装</a></li>
+          </ol>
+        </li>
+      </ol>
+    </li>
+  </ol>
+</nav>
+        </div>
+    </section>
+
+            
+        
+    </aside>
+
+
+            <main class="main full-width">
+    <article class="main-article">
+    <header class="article-header">
+
+    <div class="article-details">
+    
+
+    <div class="article-title-wrapper">
+        <h2 class="article-title">
+            <a href="/p/arch%E5%AE%89%E8%A3%85/">arch安装</a>
+        </h2>
+    
+        
+    </div>
+
+    
+    
+    
+    
+    <footer class="article-time">
+        
+
+        
+            <div>
+                <svg xmlns="http://www.w3.org/2000/svg" class="icon icon-tabler icon-tabler-clock" width="24" height="24" viewBox="0 0 24 24" stroke-width="2" stroke="currentColor" fill="none" stroke-linecap="round" stroke-linejoin="round">
+  <path stroke="none" d="M0 0h24v24H0z"/>
+  <circle cx="12" cy="12" r="9" />
+  <polyline points="12 7 12 12 15 15" />
+</svg>
+
+
+
+                <time class="article-time--reading">
+                    阅读时长: 6 分钟
+                </time>
+            </div>
+        
+    </footer>
+    
+
+    
+</div>
+
+</header>
+
+    <section class="article-content">
+    
+    
+    <ul>
+<li><a class="link" href="https://wiki.archlinux.org/index.php/Installation_guide"  target="_blank" rel="noopener"
+    >官方文档手册：</a></li>
+<li>镜像包下载：
+<ul>
+<li><a class="link" href="https://mirrors.tuna.tsinghua.edu.cn/archlinux/iso/"  target="_blank" rel="noopener"
+    >清华源</a></li>
+</ul>
+</li>
+</ul>
+<h2 id="一-安装前的其他设置可以省略此步">一. 安装前的其他设置（可以省略此步）
+</h2><ul>
+<li>改字体：<code>setfont /usr/share/kbd/consolefonts/</code></li>
+<li>改键盘布局：<code>loadkeys de-latin1</code></li>
+</ul>
+<blockquote>
+<p>以上的看情况可以省略，以下的校准时间不建议省略</p></blockquote>
+<ul>
+<li>校准时间： <code>timedatectl set-ntp true</code>;
+<ul>
+<li>使用 <code>timedatectl status</code> 检查服务状态</li>
+</ul>
+</li>
+</ul>
+<h4 id="其他一些小设置">其他一些小设置
+</h4><ul>
+<li>输入：<code>vim /etc/pacman.conf</code>
+<ul>
+<li><strong>PS</strong>：可以使用vim或nano文件编辑器</li>
+<li>启动32为应用支持：
+<ul>
+<li>删除 <code>【multilib】</code> 前的#号批注；</li>
+</ul>
+</li>
+<li>美化进度条（进度条会变成吃豆人）：
+<ul>
+<li>找到<code>#color</code> 的删除前面的#号批注</li>
+<li>也可以在其下一行加入<code>ILoveCandy</code></li>
+</ul>
+</li>
+</ul>
+</li>
+</ul>
+<ul>
+<li></li>
+</ul>
+<h4 id="换源">换源：
+</h4><ul>
+<li><code>vim /etc/pacman.d/mirrorlist</code></li>
+<li>同步备份：<code>pacman -Syy</code></li>
+<li>一些国内的源：
+<ul>
+<li><code>清华源: Server = https://mirrors.tuna.tsinghua.edu.cn/archlinuxcn/$arch</code>；</li>
+</ul>
+</li>
+<li><strong>ps</strong>：
+<ul>
+<li>如果遇到签名错误，可以安装<code>sudo pacman -S archlinuxcn-keyring</code></li>
+<li><code>etc/pacman.d</code>为pacman配置文件路径</li>
+<li>可以找到路径，按<code>esc</code>退出修改，按<code>：</code>输入<code>wq</code>保存并且退出，并且将光标移到路径上，按<code>gf</code>进入添加源</li>
+<li>后续也可以直接使用vim编辑文件服务器添加源： （更改源以后记得输入 <strong><code>pacman -Syy</code></strong> 同步备份）</li>
+</ul>
+</li>
+</ul>
+<p>ip link</p>
+<h2 id="二-硬盘分区-lsblk-查看硬盘分区">二. 硬盘分区 <code>lsblk</code> （查看硬盘分区）
+</h2><blockquote>
+<p>一般情况loop0，sr0是镜像文件不用管：sda是你的硬盘大小（一般情况是sda）</p></blockquote>
+<h4 id="1-删除分区-">1. 删除分区 ：
+</h4><ul>
+<li>命令行输入：<code>gdisk /dev/sda</code>
+<ul>
+<li>先输入<code>x</code>，进入管理员模式</li>
+<li>再输入<code>z</code>，删除分区数据</li>
+<li>接着分别联系输入俩个<code>Y</code>,确认删除</li>
+</ul>
+</li>
+</ul>
+<ul>
+<li><strong>PS</strong>：<code>gdisk</code>为删除指令</li>
+</ul>
+<h4 id="2-设置分区表">2. 设置分区表
+</h4><ul>
+<li><code>parted /dev/sda</code>
+<ol>
+<li>输入<code>mktable</code></li>
+<li>输入<code>gpt</code></li>
+<li>输入<code>quit</code></li>
+</ol>
+</li>
+</ul>
+<h4 id="3-分区">3. 分区
+</h4><h5 id="验证引导模式">验证引导模式：
+</h5><ul>
+<li><code>ls /sys/firmware/efi/efivars</code></li>
+<li><strong>PS：</strong> 如果命令结果显示了目录且没有报告错误，则系统以<strong>UEFI 模式</strong>引导。 如果目录不存在，则系统可能以 <strong>BIOS 模式</strong> (或 CSM 模式) 引导。如果系统未以您想要的模式引导启动，请参考您的主板说明书。</li>
+</ul>
+<h5 id="设置分区-cfdisk">设置分区 <code>cfdisk</code>
+</h5><ul>
+<li><strong>PS：</strong> <strong>cgdisk</strong>为图形化分区指令</li>
+</ul>
+<ul>
+<li>选择<strong>gpt</strong>回车进入分区界面 <em>(如果不需要选择，可以忽略此步)</em></li>
+<li>移动光标到<strong>New</strong>删除原来的分区大小，输入直接想要的分区大小,回车确认</li>
+<li>光标移动到<strong>Yypc</strong>确认分区类型</li>
+</ul>
+<ul>
+<li>
+<p>重复以上步骤完成分区，再将光标移动到<strong>write</strong>输入<strong>yes</strong>点击回车，保存；然后将光标移动到<strong>Quit</strong>退出</p>
+</li>
+<li>
+<p>**PS：**格式的选择</p>
+<ul>
+<li>BIOS分区将光标移动到<strong>BIOS boot</strong>上回车确认；</li>
+<li>交换分区：<strong>Linux swap</strong>；</li>
+<li>个人分区和根分区<strong>Linux filesystem</strong></li>
+</ul>
+</li>
+</ul>
+<h4 id="4-格式化分区">4. 格式化分区
+</h4><ul>
+<li><strong>PS</strong>：ext4系统分区格式；（<strong>BIOS</strong>不用格式化启动分区，<strong>UEF</strong>需要）</li>
+</ul>
+<ul>
+<li><strong>启动分区</strong>：<code>mkfs.fat -F 32 /dev/(启动分区名)</code></li>
+<li><strong>交换分区</strong>：<code>mkswap /dev/(交换分区名)</code></li>
+<li><strong>根，个人分区</strong>： <code>mkfs -t ext4 /dev/(个人或系统分区名)</code></li>
+</ul>
+<ul>
+<li><strong>PS</strong>：格式化分区结束，接下来可以输入<strong>lsblk</strong>查看硬盘分区还在不在。一般格式化完分区以后是没有任何变化的这个不用慌，正常情况。）</li>
+</ul>
+<h4 id="5-挂载分区不挂载会报错">5. 挂载分区（不挂载会报错）
+</h4><ul>
+<li>常用命令：
+<ul>
+<li>挂载命令：<code>mount</code></li>
+<li>卸载分区：<code>umount</code></li>
+<li>启动交换分区命令：<code>swapon</code></li>
+<li>新建文件夹命令：<code>mkdir</code></li>
+<li>删除文件夹命令：<code>rm -rf 目录名字</code></li>
+</ul>
+</li>
+</ul>
+<ul>
+<li>挂载交换分区：<code>swapon /dev/(交换分区名)</code></li>
+<li>挂载根分区: <code>mount /dev/(根分区) /mnt</code></li>
+<li>挂载启动分区：<strong>(BIOS不需要挂载)</strong>
+<ul>
+<li>新建文件夹 <code>mkdir /mnt/boot</code></li>
+<li>挂载启动分区<code> mount /dev /(启动分区名)/mnt/boot</code></li>
+</ul>
+</li>
+<li>挂载个人分区：
+<ul>
+<li>新建文件夹 <code>mkdir /mnt/home</code></li>
+<li>挂载个人分区 <code>mount /dev/(个人分区) /mnt/home</code></li>
+</ul>
+</li>
+</ul>
+<h2 id="三-配置liunx具体的可以见官方手册">三. 配置Liunx（具体的可以见官方手册）
+</h2><h4 id="1下载linux内核">1.下载Linux内核
+</h4><ul>
+<li>需要安装的软件包如下：
+<ul>
+<li>base；</li>
+<li>Linux内核和linux框架固件：<code>linux-firmware</code></li>
+<li>英特尔（amd）显卡驱动：<code>intel（amd）-ucode</code></li>
+</ul>
+</li>
+</ul>
+<ul>
+<li>开始安装：<code>pacstrap /mnt base base-devel linux linux-firmware  intel-ucode</code>
+<ul>
+<li><strong>ps</strong>：
+<ul>
+<li><code>pacstrap</code>为安装包特有的安装工具；</li>
+<li>如果报错请检查是否拼写错误，或者换一个国内的源</li>
+</ul>
+</li>
+</ul>
+</li>
+</ul>
+<h4 id="2-生成-fstab-文件分区">2. 生成 fstab 文件分区:
+</h4><ol>
+<li>先生成 fstab 文件分区输入： <code>genfstab -U /mnt &gt;&gt; /mnt/etc/fstab</code></li>
+<li>再用cat命令查看生产的文件是否正确：<code> cat /mnt/etc/fstab</code></li>
+</ol>
+<h4 id="3-设置本地化">3. 设置本地化
+</h4><ul>
+<li>进入安装文件: <code>arch-chroot /mnt</code></li>
+</ul>
+<h5 id="1设置键盘布局可选">1.设置键盘布局(可选)
+</h5><ul>
+<li>1.先输入<code>vim /etc/vconsole.conf</code></li>
+<li>2.再写入：<code>KEYMAP=de-latin1</code>（键盘布局）</li>
+</ul>
+<h5 id="2设置时区">2.设置时区：
+</h5><ol>
+<li>输入： <code>ln -sf /usr/share/zoneinfo/Asia(地区名)/Shanghai(城市名) /etc/localtime</code>
+<ul>
+<li><code>cp /usr/share/zoneinfo/Asia/Shanghai /etc/localtime</code></li>
+</ul>
+</li>
+<li>同步硬件时间：<code>hwclock --systohc</code></li>
+</ol>
+<h5 id="3设置语言">3.设置语言：
+</h5><ul>
+<li>输入 <code>vim /etc/locale.gen</code>；查找<code>#en_US.UIF-8</code>和<code>#zh_CN.UTF-8</code>回车；去掉<code>#</code>批注后保存退出</li>
+<li>输入<code>locale-gen</code>确认文件是否正常</li>
+<li>3.（新版可选也可以不应用，不用管）</li>
+</ul>
+<ul>
+<li>用vim创建文件输入<code>vim /etc/locale.conf</code>；
+再设定 LANG 变量写入LANG=en_US.UTF-8；</li>
+</ul>
+<ul>
+<li>应用语言 <code>export LANG=en_US.UTF-8</code></li>
+</ul>
+<h5 id="4设置计算机名默认是archios">4.设置计算机名：(默认是archios)
+</h5><ul>
+<li>用vim命令输入：<code>vim /etc/hostname</code>，再输入主机名</li>
+</ul>
+<h5 id="5配置网络-vim-etchosts">5.配置网络： <code>vim /etc/hosts</code>
+</h5><ul>
+<li>输入以下配置：（当中按tab）</li>
+</ul>
+<div class="highlight"><div class="chroma">
+<table class="lntable"><tr><td class="lntd">
+<pre tabindex="0" class="chroma"><code><span class="lnt">1
+</span><span class="lnt">2
+</span><span class="lnt">3
+</span></code></pre></td>
+<td class="lntd">
+<pre tabindex="0" class="chroma"><code class="language-fallback" data-lang="fallback"><span class="line"><span class="cl">127.0.0.1   localhost
+</span></span><span class="line"><span class="cl">::1         localhost
+</span></span><span class="line"><span class="cl">127.0.1.1   archios.localdomain archios （主机名.本地域名 主机名）
+</span></span></code></pre></td></tr></table>
+</div>
+</div><h2 id="四-本地化和引导">四. 本地化和引导
+</h2><h4 id="1-安装一些常用应用和必要文件">1. 安装一些常用应用和必要文件
+</h4><ul>
+<li><strong>PS</strong>：
+<ul>
+<li>如果报错请检查是否拼写错误</li>
+<li>arch下安装程序的指令<code>pacman -S</code>；<code>pacman -Sy</code>为同步;<code>pacman -Syy</code>更新软件</li>
+</ul>
+</li>
+<li><code>pacman -S vim networkmanager xorg sudo efibootmgr</code>
+<ul>
+<li>文件编辑器<code>vim</code>或<code>nano</code>；</li>
+<li>网络工具<code>networkmanager</code>，<code>iwd,dhcpcd</code>；</li>
+<li>引导<code>grub</code>，<code>sudo</code>；</li>
+<li>编辑启动项工具<code>efibootmgr</code>；</li>
+<li>寻找其他操作系统<code>os-prober</code>；</li>
+</ul>
+</li>
+</ul>
+<h4 id="2-设置-root-密码创建日常用户">2. 设置 Root 密码,创建日常用户：
+</h4><h5 id="1-设置-root-密码">1. 设置 root 密码：
+</h5><ul>
+<li><strong>PS</strong>： UNIX系统在输入时不会显示密码</li>
+<li>输入<code>passwd</code>(改密)</li>
+<li>再输入自己要创建的密码，并且再输入一遍确认无误；</li>
+<li>看见<code>passud: password updated success fu lly</code>显示成功</li>
+</ul>
+<h5 id="2-创建日常用户用户名不能大写">2. 创建日常用户（用户名不能大写）:
+</h5><ol>
+<li>输入<code>useradd -m -G wheel -s /bin/bash (用户名）</code></li>
+<li>用passwd创建密码：<code>passwd （用户名）</code></li>
+<li>给日常用户提权：
+输入 <code>visudo</code>；寻找<code>%wheel ALL=(ALL)ALL</code>行去掉#号注释；</li>
+</ol>
+<blockquote>
+<p>可以末尾添加Defaults rootpw有问题直询问根用户（预选）</p></blockquote>
+<h4 id="3-安装引导">3. 安装引导
+</h4><ul>
+<li>安装grub引导：</li>
+</ul>
+<blockquote>
+<p>输入<code>uname -m</code>确认cup架构</p></blockquote>
+<p><strong>BIOS+MBR输入这个指令安装引导：</strong></p>
+<ol>
+<li><code>grub-install /dev/sda</code></li>
+<li><code>grub-install --target=i386-pc /dev/sda</code>
+<ul>
+<li>见到 <strong>Installation finished. No error reported.</strong> 表示安装完成</li>
+</ul>
+</li>
+</ol>
+<p><strong>UEFI+MBR输入这个指令安装引导:</strong></p>
+<ul>
+<li><code>grub-install --target=(目标架构)-efi --efi-directory</code></li>
+</ul>
+<ol>
+<li>创建一个存放系统引导的文件夹： <code>mkdir /boot/grub (引导文件夹名字)</code></li>
+<li>在文件夹下生成引导配置：<code> grub-mkconfig -o /boot/grub/grub.cfg</code></li>
+</ol>
+<h4 id="4-重启安装">4. 重启安装
+</h4><ol>
+<li>输入<code>exit</code>或者<code>ctrl+d</code>退出chroot环境</li>
+<li>手动卸载分区： <code>umount -R /mnt</code></li>
+<li>执行 <code>reboot</code> 重启系统
+<ul>
+<li>或<code>shutdown now</code></li>
+</ul>
+</li>
+<li>重启后点击 <strong>Boot existing os</strong> 进入系统</li>
+</ol>
+
+</section>
+
+
+    <footer class="article-footer">
+    
+
+    
+    <section class="article-copyright">
+        <svg xmlns="http://www.w3.org/2000/svg" class="icon icon-tabler icon-tabler-copyright" width="24" height="24" viewBox="0 0 24 24" stroke-width="2" stroke="currentColor" fill="none" stroke-linecap="round" stroke-linejoin="round">
+  <path stroke="none" d="M0 0h24v24H0z"/>
+  <circle cx="12" cy="12" r="9" />
+  <path d="M14.5 9a3.5 4 0 1 0 0 6" />
+</svg>
+
+
+
+        <span>基于CC BY-NC-SA 4.0许可</span>
+    </section>
+    </footer>
+
+
+    
+</article>
+
+    
+
+    
+
+     
+    
+        
+    <div class="disqus-container">
+    <div id="disqus_thread"></div>
+<script>
+    window.disqus_config = function () {
+    
+    
+    
+    };
+    (function() {
+        if (["localhost", "127.0.0.1"].indexOf(window.location.hostname) != -1) {
+            document.getElementById('disqus_thread').innerHTML = 'Disqus comments not available by default when the website is previewed locally.';
+            return;
+        }
+        var d = document, s = d.createElement('script'); s.async = true;
+        s.src = '//' + "hugo-theme-stack" + '.disqus.com/embed.js';
+        s.setAttribute('data-timestamp', +new Date());
+        (d.head || d.body).appendChild(s);
+    })();
+</script>
+<noscript>Please enable JavaScript to view the <a href="https://disqus.com/?ref_noscript">comments powered by Disqus.</a></noscript>
+<a href="https://disqus.com" class="dsq-brlink">comments powered by <span class="logo-disqus">Disqus</span></a>
+</div>
+
+<style>
+    .disqus-container {
+        background-color: var(--card-background);
+        border-radius: var(--card-border-radius);
+        box-shadow: var(--shadow-l1);
+        padding: var(--card-padding);
+    }
+</style>
+
+<script>
+    window.addEventListener('onColorSchemeChange', (e) => {
+        if (typeof DISQUS == 'object') {
+            DISQUS.reset({
+                reload: true
+            });
+        }
+    })
+</script>
+
+    
+
+    <footer class="site-footer">
+    <section class="copyright">
+        &copy; 
+        
+            2020 - 
+        
+        2025 演示站点
+    </section>
+    
+    <section class="powerby">
+        使用 <a href="https://gohugo.io/" target="_blank" rel="noopener">Hugo</a> 构建 <br />
+        主题 <b><a href="https://github.com/CaiJimmy/hugo-theme-stack" target="_blank" rel="noopener" data-version="3.31.0">Stack</a></b> 由 <a href="https://jimmycai.com" target="_blank" rel="noopener">Jimmy</a> 设计
+    </section>
+</footer>
+
+
+    
+<div class="pswp" tabindex="-1" role="dialog" aria-hidden="true">
+
+    
+    <div class="pswp__bg"></div>
+
+    
+    <div class="pswp__scroll-wrap">
+
+        
+        <div class="pswp__container">
+            <div class="pswp__item"></div>
+            <div class="pswp__item"></div>
+            <div class="pswp__item"></div>
+        </div>
+
+        
+        <div class="pswp__ui pswp__ui--hidden">
+
+            <div class="pswp__top-bar">
+
+                
+
+                <div class="pswp__counter"></div>
+
+                <button class="pswp__button pswp__button--close" title="Close (Esc)"></button>
+
+                <button class="pswp__button pswp__button--share" title="Share"></button>
+
+                <button class="pswp__button pswp__button--fs" title="Toggle fullscreen"></button>
+
+                <button class="pswp__button pswp__button--zoom" title="Zoom in/out"></button>
+
+                
+                
+                <div class="pswp__preloader">
+                    <div class="pswp__preloader__icn">
+                        <div class="pswp__preloader__cut">
+                            <div class="pswp__preloader__donut"></div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+
+            <div class="pswp__share-modal pswp__share-modal--hidden pswp__single-tap">
+                <div class="pswp__share-tooltip"></div>
+            </div>
+
+            <button class="pswp__button pswp__button--arrow--left" title="Previous (arrow left)">
+            </button>
+
+            <button class="pswp__button pswp__button--arrow--right" title="Next (arrow right)">
+            </button>
+
+            <div class="pswp__caption">
+                <div class="pswp__caption__center"></div>
+            </div>
+
+        </div>
+
+    </div>
+
+</div><script 
+                src="https://cdn.jsdelivr.net/npm/photoswipe@4.1.3/dist/photoswipe.min.js"integrity="sha256-ePwmChbbvXbsO02lbM3HoHbSHTHFAeChekF1xKJdleo="crossorigin="anonymous"
+                defer
+                >
+            </script><script 
+                src="https://cdn.jsdelivr.net/npm/photoswipe@4.1.3/dist/photoswipe-ui-default.min.js"integrity="sha256-UKkzOn/w1mBxRmLLGrSeyB4e1xbrp4xylgAWb3M42pU="crossorigin="anonymous"
+                defer
+                >
+            </script><link 
+                rel="stylesheet" 
+                href="https://cdn.jsdelivr.net/npm/photoswipe@4.1.3/dist/default-skin/default-skin.min.css"crossorigin="anonymous"
+            ><link 
+                rel="stylesheet" 
+                href="https://cdn.jsdelivr.net/npm/photoswipe@4.1.3/dist/photoswipe.min.css"crossorigin="anonymous"
+            >
+
+            </main>
+        </div>
+        <script 
+                src="https://cdn.jsdelivr.net/npm/node-vibrant@3.1.6/dist/vibrant.min.js"integrity="sha256-awcR2jno4kI5X0zL8ex0vi2z&#43;KMkF24hUW8WePSA9HM="crossorigin="anonymous"
+                
+                >
+            </script><script type="text/javascript" src="/ts/main.1e9a3bafd846ced4c345d084b355fb8c7bae75701c338f8a1f8a82c780137826.js" defer></script>
+<script>
+    (function () {
+        const customFont = document.createElement('link');
+        customFont.href = "https://fonts.googleapis.com/css2?family=Lato:wght@300;400;700&display=swap";
+
+        customFont.type = "text/css";
+        customFont.rel = "stylesheet";
+
+        document.head.appendChild(customFont);
+    }());
+</script>
+
+    </body>
+</html>

@@ -2,16 +2,16 @@
 <html lang="zh-cn" dir="ltr">
     <head><meta charset='utf-8'>
 <meta name='viewport' content='width=device-width, initial-scale=1'><meta name='description' content="🤖 Assistant 要将 Manjaro 迁移到 Arch Linux，需要备份数据、安装 Arch 并恢复配置。以下是详细步骤：\n📌 迁移流程概览 备份重要数据（避免丢失） 准备 Arch 安装介质（USB 或网络安装） 安装 Arch Linux（手动或脚本辅助） 恢复配置文件和数据 优化系统设置 🔹 第一步：备份 Manjaro 数据 1. 备份个人文件（最关键的！） 重要目录： 1 cp -r ~/Documents ~/Pictures ~/Music ~/Videos /mnt/backup/ 或者使用 rsync（增量备份）： 1 rsync -avz --progress ~/ /mnt/backup/home/ 备份到外部硬盘或 NAS（推荐 ext4/NTFS 格式）。 2. 备份软件列表 导出已安装的软件包（方便 Arch 重新安装）： 1 2 pacman -Qqe &gt; pkglist.txt # 所有显式安装的软件 pacman -Qq &gt; pkglist-full.txt # 所有软件（包括依赖） 备份 AUR 软件（如 yay 安装的）： 1 yay -Qqe &gt; aur-pkglist.txt 3. 备份系统配置 关键配置文件（复制到备份目录）： 1 2 3 mkdir ~/backup-config cp -r /etc/{pacman.conf,hosts,fstab,default/grub} ~/backup-config/ cp -r ~/.config/{i3,bspwm,alacritty,fish} ~/backup-config/ 浏览器数据（如 Firefox/Chrome）： 1 cp -r ~/.mozilla ~/.config/google-chrome ~/backup-config/ 4. 备份 GRUB 和 EFI（可选） 如果是 UEFI 系统，备份 EFI 分区： 1 2 sudo mount /dev/nvme0n1p1 /mnt/efi # 替换为你的 EFI 分区 cp -r /mnt/efi/EFI/manjaro /mnt/backup/EFI/ 🔹 第二步：安装 Arch Linux 1. 准备 Arch 安装介质 下载 Arch ISO： 1 wget https://archlinux.org/iso/latest/archlinux-x86_64.iso 写入 USB（替换 /dev/sdX）： 1 sudo dd bs=4M if=archlinux-x86_64.iso of=/dev/sdX status=progress oflag=sync 2. 启动 Arch 安装环境 从 USB 启动，进入 Live 环境。 联网： 1 2 3 iwctl station wlan0 connect SSID # WiFi dhcpcd # 有线网络 ping archlinux.org # 检查网络 3. 分区和格式化 查看磁盘： 1 lsblk 推荐分区方案：\n">
-<title>如何将manjaro系统迁移到arch，如何进行备份和保存</title>
+<title></title>
 
-<link rel='canonical' href='https://blog.gtlx.ltd/p/%E5%A6%82%E4%BD%95%E5%B0%86manjaro%E7%B3%BB%E7%BB%9F%E8%BF%81%E7%A7%BB%E5%88%B0arch%E5%A6%82%E4%BD%95%E8%BF%9B%E8%A1%8C%E5%A4%87%E4%BB%BD%E5%92%8C%E4%BF%9D%E5%AD%98/'>
+<link rel='canonical' href='https://blog.gtlx.ltd/p/'>
 
-<link rel="stylesheet" href="/scss/style.min.663803bebe609202d5b39d848f2d7c2dc8b598a2d879efa079fa88893d29c49c.css"><meta property='og:title' content="如何将manjaro系统迁移到arch，如何进行备份和保存">
+<link rel="stylesheet" href="/scss/style.min.663803bebe609202d5b39d848f2d7c2dc8b598a2d879efa079fa88893d29c49c.css"><meta property='og:title' content="">
 <meta property='og:description' content="🤖 Assistant 要将 Manjaro 迁移到 Arch Linux，需要备份数据、安装 Arch 并恢复配置。以下是详细步骤：\n📌 迁移流程概览 备份重要数据（避免丢失） 准备 Arch 安装介质（USB 或网络安装） 安装 Arch Linux（手动或脚本辅助） 恢复配置文件和数据 优化系统设置 🔹 第一步：备份 Manjaro 数据 1. 备份个人文件（最关键的！） 重要目录： 1 cp -r ~/Documents ~/Pictures ~/Music ~/Videos /mnt/backup/ 或者使用 rsync（增量备份）： 1 rsync -avz --progress ~/ /mnt/backup/home/ 备份到外部硬盘或 NAS（推荐 ext4/NTFS 格式）。 2. 备份软件列表 导出已安装的软件包（方便 Arch 重新安装）： 1 2 pacman -Qqe &gt; pkglist.txt # 所有显式安装的软件 pacman -Qq &gt; pkglist-full.txt # 所有软件（包括依赖） 备份 AUR 软件（如 yay 安装的）： 1 yay -Qqe &gt; aur-pkglist.txt 3. 备份系统配置 关键配置文件（复制到备份目录）： 1 2 3 mkdir ~/backup-config cp -r /etc/{pacman.conf,hosts,fstab,default/grub} ~/backup-config/ cp -r ~/.config/{i3,bspwm,alacritty,fish} ~/backup-config/ 浏览器数据（如 Firefox/Chrome）： 1 cp -r ~/.mozilla ~/.config/google-chrome ~/backup-config/ 4. 备份 GRUB 和 EFI（可选） 如果是 UEFI 系统，备份 EFI 分区： 1 2 sudo mount /dev/nvme0n1p1 /mnt/efi # 替换为你的 EFI 分区 cp -r /mnt/efi/EFI/manjaro /mnt/backup/EFI/ 🔹 第二步：安装 Arch Linux 1. 准备 Arch 安装介质 下载 Arch ISO： 1 wget https://archlinux.org/iso/latest/archlinux-x86_64.iso 写入 USB（替换 /dev/sdX）： 1 sudo dd bs=4M if=archlinux-x86_64.iso of=/dev/sdX status=progress oflag=sync 2. 启动 Arch 安装环境 从 USB 启动，进入 Live 环境。 联网： 1 2 3 iwctl station wlan0 connect SSID # WiFi dhcpcd # 有线网络 ping archlinux.org # 检查网络 3. 分区和格式化 查看磁盘： 1 lsblk 推荐分区方案：\n">
-<meta property='og:url' content='https://blog.gtlx.ltd/p/%E5%A6%82%E4%BD%95%E5%B0%86manjaro%E7%B3%BB%E7%BB%9F%E8%BF%81%E7%A7%BB%E5%88%B0arch%E5%A6%82%E4%BD%95%E8%BF%9B%E8%A1%8C%E5%A4%87%E4%BB%BD%E5%92%8C%E4%BF%9D%E5%AD%98/'>
+<meta property='og:url' content='https://blog.gtlx.ltd/p/'>
 <meta property='og:site_name' content='演示站点'>
 <meta property='og:type' content='article'><meta property='article:section' content='Post' />
-<meta name="twitter:title" content="如何将manjaro系统迁移到arch，如何进行备份和保存">
+<meta name="twitter:title" content="">
 <meta name="twitter:description" content="🤖 Assistant 要将 Manjaro 迁移到 Arch Linux，需要备份数据、安装 Arch 并恢复配置。以下是详细步骤：\n📌 迁移流程概览 备份重要数据（避免丢失） 准备 Arch 安装介质（USB 或网络安装） 安装 Arch Linux（手动或脚本辅助） 恢复配置文件和数据 优化系统设置 🔹 第一步：备份 Manjaro 数据 1. 备份个人文件（最关键的！） 重要目录： 1 cp -r ~/Documents ~/Pictures ~/Music ~/Videos /mnt/backup/ 或者使用 rsync（增量备份）： 1 rsync -avz --progress ~/ /mnt/backup/home/ 备份到外部硬盘或 NAS（推荐 ext4/NTFS 格式）。 2. 备份软件列表 导出已安装的软件包（方便 Arch 重新安装）： 1 2 pacman -Qqe &gt; pkglist.txt # 所有显式安装的软件 pacman -Qq &gt; pkglist-full.txt # 所有软件（包括依赖） 备份 AUR 软件（如 yay 安装的）： 1 yay -Qqe &gt; aur-pkglist.txt 3. 备份系统配置 关键配置文件（复制到备份目录）： 1 2 3 mkdir ~/backup-config cp -r /etc/{pacman.conf,hosts,fstab,default/grub} ~/backup-config/ cp -r ~/.config/{i3,bspwm,alacritty,fish} ~/backup-config/ 浏览器数据（如 Firefox/Chrome）： 1 cp -r ~/.mozilla ~/.config/google-chrome ~/backup-config/ 4. 备份 GRUB 和 EFI（可选） 如果是 UEFI 系统，备份 EFI 分区： 1 2 sudo mount /dev/nvme0n1p1 /mnt/efi # 替换为你的 EFI 分区 cp -r /mnt/efi/EFI/manjaro /mnt/backup/EFI/ 🔹 第二步：安装 Arch Linux 1. 准备 Arch 安装介质 下载 Arch ISO： 1 wget https://archlinux.org/iso/latest/archlinux-x86_64.iso 写入 USB（替换 /dev/sdX）： 1 sudo dd bs=4M if=archlinux-x86_64.iso of=/dev/sdX status=progress oflag=sync 2. 启动 Arch 安装环境 从 USB 启动，进入 Live 环境。 联网： 1 2 3 iwctl station wlan0 connect SSID # WiFi dhcpcd # 有线网络 ping archlinux.org # 检查网络 3. 分区和格式化 查看磁盘： 1 lsblk 推荐分区方案：\n">
     </head>
     <body class="
@@ -313,7 +313,7 @@
 
     <div class="article-title-wrapper">
         <h2 class="article-title">
-            <a href="/p/%E5%A6%82%E4%BD%95%E5%B0%86manjaro%E7%B3%BB%E7%BB%9F%E8%BF%81%E7%A7%BB%E5%88%B0arch%E5%A6%82%E4%BD%95%E8%BF%9B%E8%A1%8C%E5%A4%87%E4%BB%BD%E5%92%8C%E4%BF%9D%E5%AD%98/">如何将manjaro系统迁移到arch，如何进行备份和保存</a>
+            <a href="/p/"></a>
         </h2>
     
         
